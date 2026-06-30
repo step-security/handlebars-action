@@ -1,0 +1,49 @@
+env.user: {{ env.USER }}
+
+{{#with github}}
+github.action: {{ action }}
+github.actor: {{ actor }}
+github.api_url: {{ api_url }}
+github.base_ref: {{ base_ref }}
+github.event_name: {{ event_name }}
+github.event_path: {{ event_path }}
+github.graphql_url: {{ graphql_url }}
+github.head_ref: {{ head_ref }}
+github.ref: {{ ref }}
+github.repository: {{ repository }}
+github.repository_name: {{ repository_name }}
+github.run_id: {{ run_id }}
+github.run_number: {{ run_number }}
+github.server_url: {{ server_url }}
+github.sha: {{ sha }}
+github.workflow: {{ workflow }}
+github.workspace: {{ workspace }}
+github.runner_os: {{ runner_os }}
+{{/with}}
+
+{{#with file}}
+file.path: {{ path }}
+file.root: {{ root }}
+file.dir: {{ dir }}
+file.base: {{ base }}
+file.ext: {{ ext }}
+file.name: {{ name }}
+{{/with}}
+
+{{#with outputFile}}
+outputFile.path: {{ path }}
+outputFile.root: {{ root }}
+outputFile.dir: {{ dir }}
+outputFile.base: {{ base }}
+outputFile.ext: {{ ext }}
+outputFile.name: {{ name }}
+{{/with}}
+
+{{#with date}}
+date.year: {{ year }}
+date.hours: {{ hours }}
+date.fullString: {{ fullString }}
+date.isoString: {{ isoString }}
+date.utc.hours: {{ utc.hours }}
+date.utc.fullString: {{ utc.fullString }}
+{{/with}}

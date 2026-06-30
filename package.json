@@ -1,0 +1,68 @@
+{
+  "name": "@step-security/handlebars-action",
+  "description": "GitHub Action for Handlebars Template Transformation",
+  "version": "2.4.0",
+  "author": "step-security",
+  "private": true,
+  "homepage": "https://github.com/step-security/handlebars-action#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-security/handlebars-action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/step-security/handlebars-action/issues"
+  },
+  "keywords": [
+    "handlebars",
+    "action",
+    "template",
+    "transformation",
+    "github",
+    "repository",
+    "repo",
+    "setup"
+  ],
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "package:watch": "npm run package -- --watch",
+    "package": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
+    "local-action": "local-action . src/main.ts .env",
+    "test": "jest --passWithNoTests",
+    "all": "npm run lint && npm run package",
+    "lint": "npm run lint:code && npm run lint:other",
+    "lint:code": "npm run eslint:defaults",
+    "lint:other": "npm run prettier:defaults -- --check",
+    "format": "npm run format:code && npm run format:other",
+    "format:code": "npm run eslint:defaults -- --fix",
+    "format:other": "npm run prettier:defaults -- --write",
+    "eslint:defaults": "eslint . --ext .ts,.tsx,.js,.jsx",
+    "prettier:defaults": "prettier \"**/*.{json,md,markdown,css,scss,yaml,yml}\""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/glob": "^0.5.0",
+    "axios": "^1.17.0",
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "@github/local-action": "^2.6.3",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.13.9",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vercel/ncc": "^0.38.3",
+    "eslint": "^8.57.1",
+    "eslint-plugin-github": "^4.10.2",
+    "eslint-plugin-jest": "^27.9.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.2.6",
+    "typescript": "^5.8.2"
+  }
+}
