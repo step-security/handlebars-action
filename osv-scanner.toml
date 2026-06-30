@@ -1,0 +1,7 @@
+[[IgnoredVulns]]
+id = "GHSA-f886-m6hf-6m8v"
+reason = "dev-only dependency via eslint -> minimatch -> brace-expansion, not present in production bundle"
+
+[[IgnoredVulns]]
+id = "GHSA-v6h2-p8h4-qcjw"
+reason = "dev-only dependency via eslint -> minimatch -> brace-expansion, not present in production bundle"
