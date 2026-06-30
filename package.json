@@ -31,7 +31,6 @@
   "scripts": {
     "package:watch": "npm run package -- --watch",
     "package": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
-    "local-action": "local-action . src/main.ts .env",
     "test": "jest --passWithNoTests",
     "all": "npm run lint && npm run package",
     "lint": "npm run lint:code && npm run lint:other",
@@ -45,13 +44,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.11.1",
+    "@actions/core": "^2.0.3",
     "@actions/glob": "^0.5.0",
     "axios": "^1.17.0",
-    "handlebars": "^4.7.8"
+    "handlebars": "^4.7.9"
   },
   "devDependencies": {
-    "@github/local-action": "^2.6.3",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.9",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
